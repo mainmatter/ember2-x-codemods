@@ -11,7 +11,7 @@ module.exports = function transformer(file, api) {
     },
   });
 
-  let filteredNodes = node.filter((path) => {
+  let nodesWithBindings = node.filter((path) => {
     return path.value.key.name && path.value.key.name.endsWith('Binding');
   });
 
@@ -27,7 +27,7 @@ module.exports = function transformer(file, api) {
       .get()
       .node.specifiers.filter((specifier) => specifier.imported.name === 'alias');
 
-  if (!alreadyHasAlias[0] && filteredNodes.length) {
+  if (!alreadyHasAlias[0] && nodesWithBindings.length) {
     if (computedImports.length) {
       let aliasSpecifier = j.importSpecifier(j.identifier('alias'));
       computedImports.get().value.specifiers.push(aliasSpecifier);
@@ -41,7 +41,7 @@ module.exports = function transformer(file, api) {
     }
   }
 
-  filteredNodes.forEach((path) => {
+  nodesWithBindings.forEach((path) => {
     path.value.value = j.callExpression(j.identifier('alias'), [path.value.value]);
     path.value.key.name = path.value.key.name.slice(0, -7);
   });
