@@ -15,6 +15,10 @@ module.exports = function transformer(file, api) {
     return path.value.key.name && path.value.key.name.endsWith('Binding');
   });
 
+  if (!nodesWithBindings.length) {
+    return node.toSource();
+  }
+
   let imports = root.find(j.ImportDeclaration);
 
   let computedImports = imports.filter((importt) => {
@@ -27,7 +31,7 @@ module.exports = function transformer(file, api) {
       .get()
       .node.specifiers.filter((specifier) => specifier.imported.name === 'alias');
 
-  if (!alreadyHasAlias[0] && nodesWithBindings.length) {
+  if (!alreadyHasAlias[0]) {
     if (computedImports.length) {
       let aliasSpecifier = j.importSpecifier(j.identifier('alias'));
       computedImports.get().value.specifiers.push(aliasSpecifier);
