@@ -27,11 +27,9 @@ module.exports = function transformer(file, api) {
 
   let alreadyHasAlias =
     computedImports.length &&
-    computedImports
-      .get()
-      .node.specifiers.filter((specifier) => specifier.imported.name === 'alias');
+    computedImports.get().node.specifiers.some((specifier) => specifier.imported.name === 'alias');
 
-  if (!alreadyHasAlias[0]) {
+  if (!alreadyHasAlias) {
     if (computedImports.length) {
       let aliasSpecifier = j.importSpecifier(j.identifier('alias'));
       computedImports.get().value.specifiers.push(aliasSpecifier);
