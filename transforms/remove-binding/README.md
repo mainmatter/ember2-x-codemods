@@ -1,5 +1,5 @@
 # remove-binding
-Ember 2.7 introduced a new deprecation to EmberBinding https://deprecations.emberjs.com/v2.x#toc_ember-binding. This codemod aims to convert all existing uses of `fooBinding: 'path.to.property'` to `foo: alias('path.to.property')` and if the current file does not have the alias import the following line will also be added `import { alias } from '@ember/object/computed';`
+Ember 2.7 introduced a [new deprecation to EmberBinding](https://deprecations.emberjs.com/v2.x#toc_ember-binding). This codemod aims to convert all existing uses of `fooBinding: 'path.to.property'` to `foo: alias('path.to.property')` and if the current file does not have the alias import the following line will also be added `import { alias } from '@ember/object/computed';`
 
 
 ## Usage
