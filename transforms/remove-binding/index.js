@@ -43,9 +43,9 @@ module.exports = function transformer(file, api) {
     }
   }
 
-  nodesWithBindings.forEach((path) => {
-    path.value.value = j.callExpression(j.identifier('alias'), [path.value.value]);
-    path.value.key.name = path.value.key.name.slice(0, -7);
+  nodesWithBindings.forEach(({ value: bindingProp }) => {
+    bindingProp.value = j.callExpression(j.identifier('alias'), [bindingProp.value]);
+    bindingProp.key.name = bindingProp.key.name.slice(0, -7);
   });
   return node.toSource();
 };
