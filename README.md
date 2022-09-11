@@ -23,6 +23,7 @@ node ./bin/cli.js <TRANSFORM NAME> path/of/files/ or/some**/*glob.js
 ## Transforms
 
 <!--TRANSFORMS_START-->
+`[contains-to-includes](transforms/contains-to-includes/README.md)` Ember 2.8 introduced a new [deprecation](https://deprecations.emberjs.com/v2.x#toc_ember-runtime-enumerable-contains) to remove the use of `contains` for `includes` for `Enumerable` and `Array`, this codemod will change migrate all such occurrences for you.
 <!--TRANSFORMS_END-->
 
 ## Contributing
