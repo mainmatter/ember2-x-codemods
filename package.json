@@ -1,10 +1,12 @@
 {
   "name": "ember2-x-codemods",
   "version": "0.1.0",
+  "repository": "git@github.com:simplabs/ember2-x-codemods.git",
   "scripts": {
     "lint": "eslint --cache .",
     "test": "codemod-cli test --passWithNoTests",
     "test:coverage": "codemod-cli test --coverage",
+    "release": "release-it --dry-run",
     "update-docs": "codemod-cli update-docs",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
@@ -19,18 +21,23 @@
     "codemod-cli": "^3.2.0"
   },
   "devDependencies": {
+    "@release-it-plugins/lerna-changelog": "^5.0.0",
     "coveralls": "^3.1.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^26.6.3",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "release-it": "^15.4.1"
   },
   "engines": {
     "node": "10.* || 12.* || >= 14"
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "volta": {
+    "node": "16.17.0"
   }
 }
