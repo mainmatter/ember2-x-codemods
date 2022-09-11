@@ -1,6 +1,7 @@
 {
   "name": "ember2-x-codemods",
   "version": "0.1.0",
+  "repository": "git@github.com:simplabs/ember2-x-codemods.git",
   "scripts": {
     "lint": "eslint --cache .",
     "test": "codemod-cli test --passWithNoTests",
@@ -27,7 +28,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^26.6.3",
-    "lerna-changelog": "^2.2.0",
     "prettier": "^2.5.1",
     "release-it": "^15.4.1"
   },
