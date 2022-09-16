@@ -4,7 +4,7 @@
   "repository": "git@github.com:Mainmatter/ember2-x-codemods.git",
   "scripts": {
     "lint": "eslint --cache .",
-    "test": "codemod-cli test --passWithNoTests",
+    "test": "codemod-cli test",
     "test:coverage": "codemod-cli test --coverage",
     "release": "release-it --dry-run",
     "update-docs": "codemod-cli update-docs",
