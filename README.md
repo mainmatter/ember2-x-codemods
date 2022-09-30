@@ -24,6 +24,7 @@ node ./bin/cli.js <TRANSFORM NAME> path/of/files/ or/some**/*glob.js
 
 <!--TRANSFORMS_START-->
 * [contains-to-includes](transforms/contains-to-includes/README.md)
+* [property-to-computed](transforms/property-to-computed/README.md)
 * [remove-binding](transforms/remove-binding/README.md)
 <!--TRANSFORMS_END-->
 
