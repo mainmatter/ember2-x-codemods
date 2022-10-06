@@ -1,12 +1,12 @@
 {
   "name": "ember2-x-codemods",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "repository": "git@github.com:Mainmatter/ember2-x-codemods.git",
   "scripts": {
     "lint": "eslint --cache .",
     "test": "codemod-cli test",
     "test:coverage": "codemod-cli test --coverage",
-    "release": "release-it --dry-run",
+    "release": "release-it",
     "update-docs": "codemod-cli update-docs",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
