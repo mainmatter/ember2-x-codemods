@@ -1,6 +1,6 @@
 {
   "name": "ember2-x-codemods",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": "git@github.com:Mainmatter/ember2-x-codemods.git",
   "scripts": {
     "lint": "eslint --cache .",
