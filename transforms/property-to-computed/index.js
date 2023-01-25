@@ -23,7 +23,7 @@ module.exports = function transformer(file, api) {
       return specifier.type === 'ImportSpecifier' && specifier.imported.name === 'computed';
     });
 
-  if (!alreadyHasComputed) {
+  if (!alreadyHasComputed && node.length) {
     if (computedImports.length) {
       let computedSpecifier = j.importSpecifier(j.identifier('computed'));
       computedImports.get().value.specifiers.push(computedSpecifier);
